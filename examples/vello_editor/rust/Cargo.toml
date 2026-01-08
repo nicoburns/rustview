@@ -8,9 +8,9 @@ name = "main"
 crate-type = ["cdylib"]
 
 [dependencies]
+android-view = { workspace = true }
 accesskit = "0.21.0"
 accesskit_android = "0.4.0"
-android-view = { path = ".." }
 android_logger = "0.15.0"
 anyhow = "1.0.96"
 log = "0.4.26"

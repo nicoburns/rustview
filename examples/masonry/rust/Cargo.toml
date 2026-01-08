@@ -8,9 +8,9 @@ name = "main"
 crate-type = ["cdylib"]
 
 [dependencies]
-android-view = { path = ".." }
+android-view = { workspace = true }
+masonry_android = { workspace = true }
 masonry = { git = "https://github.com/linebender/xilem" }
-masonry_android = { path = "../masonry" }
 
 # Send tracing events to Android GPU inspector, for profiling
 tracing_android_trace = "0.1.1"

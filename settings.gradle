@@ -13,6 +13,9 @@ dependencyResolutionManagement {
     }
 }
 
-include ':app'
 include ':library'
+project(':library').projectDir = file('android-view/java')
+include ':vello_editor'
+project(':vello_editor').projectDir = file('examples/vello_editor/java')
 include ':masonry-app'
+project(':masonry-app').projectDir = file('examples/masonry/java')

@@ -1,24 +1,15 @@
 [workspace]
 members = [
-    ".",
-    "demo",
-    "masonry",
-    "masonry-demo",
+    "android-view/rust",
+    "examples/vello_editor/rust",
+    "examples/masonry/rust",
+    "examples/masonry/masonry-android",
 ]
+resolver = "3"
 
-[package]
-name = "android-view"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-dpi = { version = "0.1.2", default-features = false }
-jni = "0.21.1"
-ndk = "0.9.0"
-num_enum = "0.7.3"
-send_wrapper = "0.6.0"
-smallvec = "1.15.0"
-ui-events = "0.1.0"
+[workspace.dependencies]
+android-view = { path = "./android-view/rust" }
+masonry_android = { path = "./examples/masonry/masonry-android" }
 
 [profile.dev]
 panic = "abort"
