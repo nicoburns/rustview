@@ -1,20 +1,69 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 }
 
-group = "org.linebender.android.rustview"
+// group = "org.linebender.android.rustview"
 
 android {
-    compileSdk 31
+    namespace 'com.nicoburns.rustview'
+
+    compileSdk 36
+
     defaultConfig {
-        minSdk 28
+        minSdk 25
+        targetSdk 36
         versionCode 1
-        versionName "1.0.0"
+        versionName "0.1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    namespace 'org.linebender.android.rustview'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.core:core:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1' // 1.2.0
+    implementation 'androidx.core:core:1.17.0' // 1.5.0
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.nicoburns.rustview'
+                artifactId = 'rustview'
+                version = '0.0.0'
+
+                pom {
+                    name = 'RustView'
+                    description = 'A library for implementing Android views in Rust'
+                    url = 'https://github.com/nicoburns/rustview'
+
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                        license {
+                            name = 'MIT License'
+                            url = 'https://opensource.org/licenses/MIT'
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
