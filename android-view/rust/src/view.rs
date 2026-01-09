@@ -506,7 +506,7 @@ pub fn register_view_class<'local, 'other_local>(
     static REGISTER_BASE_NATIVES: Once = Once::new();
     REGISTER_BASE_NATIVES.call_once(|| {
         env.register_native_methods(
-            "org/linebender/android/rustview/RustView",
+            "org/linebender/android/viewdemo/RustView",
             &[
                 NativeMethod {
                     name: "onMeasureNative".into(),

@@ -36,6 +36,8 @@ use access_ids::{TEXT_INPUT_ID, WINDOW_ID};
 
 mod text;
 
+fn main() {}
+
 // From VelloCompose
 struct AndroidWindowHandle {
     window: NativeWindow,

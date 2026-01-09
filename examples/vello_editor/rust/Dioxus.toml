@@ -1,0 +1,6 @@
+[application]
+android_project_dir = "../java"
+# gradle_wrapper_dir = "../../.."
+
+[bundle]
+identifier = "org.linebender.android.viewdemo"

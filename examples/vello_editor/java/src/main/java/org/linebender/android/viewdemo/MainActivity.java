@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 
-public final class DemoActivity extends Activity {
+public final class MainActivity extends Activity {
     static {
-         System.loadLibrary("main");
+         System.loadLibrary("dioxusmain");
     }
 
     @Override
