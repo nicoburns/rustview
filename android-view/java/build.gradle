@@ -43,9 +43,9 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId = 'com.nicoburns.rustview'
+                groupId = 'com.nicoburns'
                 artifactId = 'rustview'
-                version = '0.0.0'
+                version = '0.1.0'
 
                 pom {
                     name = 'RustView'
