@@ -1,4 +1,4 @@
-package org.linebender.android.rustview;
+package com.nicoburns.rustview;
 
 import android.content.Context;
 import android.graphics.Rect;

@@ -1,4 +1,4 @@
-package org.linebender.android.rustview;
+package com.nicoburns.rustview;
 
 import android.os.Bundle;
 import android.os.Handler;
